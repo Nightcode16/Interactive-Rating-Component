@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(217, 12%, 63%);
+  --medium-gray: hsl(216, 12%, 54%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+  --main-bg: hsl(215, 22%, 15%);
+  --dark-blue: hsl(210, 20%, 18%);
+}
+
+/*----- Global Styling -----*/
+
+body {
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: var(--main-bg);
+  padding: 1.25rem;
+  width: min(87%, 25rem);
+  border-radius: 1rem;
+}
+
+h1 {
+  color: var(--white);
+  padding-block: 0.645rem;
+  font-size: 1rem;
+}
+
+h2 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+p {
+  color: var(--light-gray);
+  font-size: 0.615rem;
+  line-height: 1rem;
+}
+
+button {
+  padding: 1em;
+  width: 100%;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--orange);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.645rem;
+  transition: all 250ms ease;
+}
+
+/*----- Class Styling -----*/
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rating {
+  background-color: var(--dark-blue);
+  color: var(--medium-gray);
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-block: 1.5rem;
+  font-size: 0.645rem;
+  box-shadow: 1px 1px 3px var(--very-dark-blue);
+  transition: all 250ms ease;
+}
+
+.star {
+  background-color: var(--dark-blue);
+  padding: 0.5rem;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  transition: all 250ms ease-in;
+}
+
+/*----- Hover State -----*/
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: var(--very-dark-blue);
+  color: var(--orange);
+}
+
+.rating:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+/*----- Interactive Styling -----*/
+.ratings-style {
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
+  font-weight: 700;
+}
+
+.layer {
+  width: min(87%, 25rem);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  padding: 1.25rem;
+  background-color: var(--main-bg);
+  border-radius: 1rem;
+  transition: all 400ms ease;
+  opacity: 0;
+  z-index: -1;
+}
+
+.remove-main {
+  display: none;
+}
+
+.add-layer {
+  opacity: 1;
+  z-index: 1;
+}
+
+.rating-count {
+  background-color: var(--dark-blue);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  opacity: 0.9;
+  border-radius: 1rem;
+  color: var(--orange);
+  margin-block: 2rem;
+}
+
+/*----- Desktop Breakpoint -----*/
+
+@media only screen and (min-width: 375px) {
+  main {
+    padding: 2rem;
+  }
+
+  .layer {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+  }
+
+  .star {
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+  }
+
+  .rating {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+
+  .layer h2 {
+    font-size: 1.5rem;
+  }
+}
